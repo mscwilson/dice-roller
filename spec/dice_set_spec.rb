@@ -27,6 +27,21 @@ describe DiceSet do
       expect(subject.roll_dice[0]).to eq subject.history[-1].sum
     end
 
+    it "prints score for one dice rolled" do
+      subject.add_dice(Dice.new)
+      expect { subject.roll_dice }.to output(a_string_including("You rolled a")).to_stdout
+    end
+
+    it "prints score for two dice rolled" do
+      subject.add_dice(Dice.new, Dice.new)
+      expect { subject.roll_dice }.to output(/You rolled \d and \d.[\s\S]*/).to_stdout
+    end
+
+    it "prints score for three dice rolled" do
+      subject.add_dice(Dice.new, Dice.new, Dice.new)
+      expect { subject.roll_dice }.to output(/You rolled \d, \d and \d.[\s\S]*/).to_stdout
+    end
+
   end
   
 end

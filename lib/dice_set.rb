@@ -29,7 +29,12 @@ class DiceSet
       puts "You rolled #{@result.sum} in total!"
       score << @result.sum
     end
+    puts "Total score so far: #{history.flatten.sum}"
     score
   end
+
+
+  
+  
 
 end
