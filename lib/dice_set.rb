@@ -8,8 +8,8 @@ class DiceSet
     @dice_list = []
   end
 
-  def add_die(die)
-    dice_list << die
+  def add_dice(*die)
+    die.each { |die| dice_list << die }
   end
 
   def roll_dice
