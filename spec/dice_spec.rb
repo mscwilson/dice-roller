@@ -7,7 +7,7 @@ describe Dice do
   it "roll returns random value between 1..6" do
     dice = Dice.new
     results = []
-    100.times { results << dice.roll }
+    100000.times { results << dice.roll }
     expect(results.minmax).to eq([1,6])
   end
 
