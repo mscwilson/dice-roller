@@ -2,9 +2,10 @@ require "dice_set"
 
 describe DiceSet do
 
-  # it "stores roll history" do
-  #   subject.
-  # end
+  it "stores roll history" do
+    subject.roll_dice
+    expect(subject.history.length).to eq 1
+  end
 
   it { is_expected.to respond_to(:add_dice).with_unlimited_arguments }
 

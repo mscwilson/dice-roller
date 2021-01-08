@@ -2,10 +2,11 @@ require_relative "dice"
 
 class DiceSet
 
-  attr_reader :dice_list
+  attr_reader :dice_list, :history
 
   def initialize
     @dice_list = []
+    @history = []
   end
 
   def add_dice(*die)
@@ -15,6 +16,7 @@ class DiceSet
   def roll_dice
     result =[]
     dice_list.each { |die| result << die.roll }
+    history << result
     result
   end
 
